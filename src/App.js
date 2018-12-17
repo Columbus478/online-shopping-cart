@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {NavLink, withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
+import Router from './Router';
+
+
+const Navigation = ({ cart })=>
+  <nav > 
+  <ul className='nav-bar' >
+   <li className='header' ><NavLink to='/'>Home Page</NavLink></li>
+   <li className='header'><NavLink to='/cart' data-notifications = {
+    cart.reduce((acc,item) => {
+      return acc + item.quantity} , 0 )
+    } >My cart</NavLink></li>
+   <li className='header'><NavLink to='/checkout'>Checkout</NavLink></li>
+  </ul>
+  </nav>
+
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return <div className='page-container'>
+    <Navigation {...this.props}/>
+    <Router/>
+    </div>
   }
 }
 
-export default App;
+
+function mapStateToProps(state){
+  return {    
+        cart: state.cart,
+      }
+}
+
+export default withRouter(connect(mapStateToProps)(App));

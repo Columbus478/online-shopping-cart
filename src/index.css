@@ -1,3 +1,6 @@
+.{
+	box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -6,9 +9,189 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  background-color: lightblue;
+  position: relative;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+/*===For all pages====*/
+.page-container{
+	width: 90%;
+	background-color: white;
+	padding-left: 0%;
+	padding-bottom:2%;
+	margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+}
+/*==================*/
+
+
+/*===For product listing=====*/
+.product-listing{
+  display: flex;
+  flex:1;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.product-listing .product-list-item{
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  margin-left: 20px;
+  width: 200px;
+  border: solid gray 2px;
+  border-radius: 5%; 
+}
+/*===========================*/
+
+
+/*===For each page name*/
+h3.homepageCss,h3.cartpageCss,
+h3.checkoutpageCss,h3.orderspageCss{
+	padding-left: 2%;
+	margin-left: 42%;
+	margin-right: 46%;
+	background-color: lightgray;
+	border-radius: 50%;	
+}
+/*======================*/
+
+
+/*=====For navigation bar======*/
+ul.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 75%;
+  overflow: hidden;
+  background-color: #333;
+  position: absolute;
+  width: 100%;
+}
+li.header{
+  float: left;  
+  border-right: 1px solid #bbb;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #4CAF50; /*#111*/
+}
+/*.active {
+  background-color: #4CAF50;
+}*/
+li:last-child {
+  border-right: none;
+}
+/*====================*/
+
+
+/*===Add and Remove buttons====*/
+.addbtn, .removebtn {
+	float: left;
+	margin-right: 5%;
+	padding-bottom: 0%;
+	margin-bottom: 0%;
+	background: lightblue;
+}
+/*================*/
+
+
+/*======For Badge display=====*/
+[data-notifications] {
+	position: relative;
+}
+[data-notifications]:after {
+	content: attr(data-notifications);
+	position: absolute;
+	background: red;
+	border-radius: 50%;	
+	padding: 0.3em;
+	top:0px;
+}
+[data-notifications^="-"]:after,
+[data-notifications="0"]:after,
+[data-notifications=""]:after {
+   display: none;
+}
+/*===========================*/
+
+
+/*===For tables=====*/
+table{
+	width: 50%;
+	margin-left: 25%;
+}
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+/*===============*/
+
+
+/*======For checkout=========*/
+div.checkoutForm{
+  width: 50%;
+  margin-left: 25%;
+  width: 50%;
+  background-color: lightgray;
+  position: relative;
+  min-width:50%;
+  overflow: hidden;
+}
+div.nameField, div.emailField, .submitbtn{
+  margin-left: 5%;
+  position: relative;
+  max-width: 50%;
+  min-width: 0%;
+}
+.submitbtn{
+  margin-bottom: 2%;
+}
+/*========================*/
+
+
+/*=======For order page====*/
+div.orderDiv{
+  margin-left: 25%; 
+  margin-top: 5%;
+  background-color: lightgray;
+  position: relative;
+  min-width:30%;
+  width: 100%;
+  max-width: 50%;
+  overflow: hidden;
+}
+.order_items {  
+  top: 10px;
+  margin-top: 1%;
+  padding-top:1%;
+  min-width: 50%;
+  margin-left: 25%;
+  position: relative;
+  overflow: hidden;
+}
+h4.orders{  
+  margin-left: 42%;
+  margin-right: 30%;
+  background-color: lightgray;  
+}
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-left: 0px;
+  padding-left: 0%;
+  padding-bottom: 2%;
+}
+/*===============================*/
