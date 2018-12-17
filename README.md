@@ -1,6 +1,7 @@
 An online shopping cart with the functionalities of adding, removing, viewing in cart, checking out chosen products and display the invoice.
 
 Technologies used: React, Redux store and a REST Api for fetching data.
+
 Vital dependencies used: es6-promise and isomorphic-fetch.
 
 How to use:
